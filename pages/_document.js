@@ -8,7 +8,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* <meta name="theme-color" content="#000" /> */}
-          <meta httpEquiv="X-Frame-Options" content="deny" />
+          {/* <meta httpEquiv="X-Frame-Options" content="deny" /> */}
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
@@ -21,7 +21,7 @@ export default class MyDocument extends Document {
           <script
             id="smatbot-chatbot-script"
             src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"
-            defer={true}
+            async={true}
           ></script>
 
         </Head>
@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `var chatbot_id=11110;!function(){var t,e,a=document,s="smatbot-chatbot";a.getElementById(s)||(t=a.createElement("script"),t.id=s,t.type="text/javascript",t.src="https://smatbot.s3.amazonaws.com/files/smatbot_plugin.js.gz",e=a.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e))}()`,
             }}
-            defer={true}
+            async={true}
           ></script>
 
           <Main />
