@@ -2,9 +2,9 @@
 const cspPolicy = {
   // "default-src": "'self'",
   'script-src':
-    "'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js https://code.responsivevoice.org/responsivevoice.js https://cdn.jsdelivr.net/npm/pikaday/pikaday.min.js https://www.google.com https://www.gstatic.com https://www.googletagmanager.com",
+    "'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://smatbot.s3.amazonaws.com https://code.responsivevoice.org https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.googletagmanager.com",
   'style-src':
-    "'self' 'unsafe-inline' https://fonts.googleapis.com/icon?family=Material+Icons https://plugin.smatbot.com/smatbot.css.gz https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.min.css",
+    "'self' 'unsafe-inline' https://fonts.googleapis.com https://smatbot.s3.amazonaws.com https://cdn.jsdelivr.net https://plugin.smatbot.com/smatbot.css.gz",
 
   'font-src':
     "'self' https://fonts.gstatic.com data: https://s3.amazonaws.com http://localhost:3000 http://www.giftgujarat.in https://www.giftgujarat.in https://chat-bot-chi-six.vercel.app/ https://shopestablishment.giftgujarat.in",
@@ -87,16 +87,6 @@ const nextConfig = {
       },
     ];
   },
-  // redirects function is use only in https://shopestablishment.giftgujarat.in sub domain
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/login',
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
 };
 
 module.exports = nextConfig;
