@@ -6,7 +6,15 @@ import Script from "next/script";
 
 export default class MyDocument extends Document {
   render() {
-
+    const {
+      isUserPath,
+      isLoginPath,
+      isSignupPath,
+      isChangePwdPath,
+      isForgotPwdPath,
+      isResetPwdPath,
+      isVerifyPath,
+    } = this.props;
     return (
       <Html lang="en">
         <Head>
@@ -20,18 +28,57 @@ export default class MyDocument extends Document {
 
           {this.props.emotionStyleTags}
 
-          <script
-            id="smatbot-chatbot-script"
-            src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"
-          ></script>
+          {!isUserPath &&
+            !isLoginPath &&
+            !isSignupPath &&
+            !isChangePwdPath &&
+            !isForgotPwdPath &&
+            !isResetPwdPath &&
+            !isVerifyPath && (
+              <script
+                id="smatbot-chatbot-script"
+                src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"
+              async></script>
+            )}
         </Head>
         <body>
-          <script
-            id="smatbot-chatbot-load"
-            dangerouslySetInnerHTML={{
-              __html: `var chatbot_id=11110;!function(){var t,e,a=document,s="smatbot-chatbot";a.getElementById(s)||(t=a.createElement("script"),t.id=s,t.type="text/javascript",t.src="https://smatbot.s3.amazonaws.com/files/smatbot_plugin.js.gz",e=a.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e))}()`,
-            }}
-          ></script>
+          {/* <!-- Google tag (gtag.js) by DevIT --> */}
+          {/* <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-M2GQ4M7S12"
+          ></Script>
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-M2GQ4M7S12');
+            `}
+          </Script> */}
+
+          {/* <!-- Google tag (gtag.js) by GIFT team --> */}
+          {/* <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-8V1HRF0MJN"
+          ></Script>
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8V1HRF0MJN');
+            `}
+          </Script>*/}
+          {isUserPath &&
+            (
+              <script
+                id="smatbot-chatbot-load"
+                dangerouslySetInnerHTML={{
+                  __html: `var chatbot_id=11110;!function(){var t,e,a=document,s="smatbot-chatbot";a.getElementById(s)||(t=a.createElement("script"),t.id=s,t.type="text/javascript",t.src="https://smatbot.s3.amazonaws.com/files/smatbot_plugin.js.gz",e=a.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e))}()`,
+                }}
+                async
+                ></script>
+            )}
           <Main />
           <NextScript />
         </body>
@@ -42,7 +89,8 @@ export default class MyDocument extends Document {
 
 MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
-
+  const { pathname } = ctx;
+  const isUserPath = pathname?.startsWith("/");
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
@@ -67,6 +115,7 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-        emotionStyleTags,
-    };
+    emotionStyleTags,
+    isUserPath,
+  };
 };

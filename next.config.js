@@ -2,9 +2,9 @@
 const cspPolicy = {
   // "default-src": "'self'",
   'script-src':
-    "'self' 'unsafe-inline' 'unsafe-eval' https://smatbot.s3.amazonaws.com",
+    "'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://smatbot.s3.amazonaws.com https://code.responsivevoice.org https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.googletagmanager.com",
   'style-src':
-    "'self' 'unsafe-inline' https://smatbot.s3.amazonaws.com",
+    "'self' 'unsafe-inline' https://fonts.googleapis.com https://smatbot.s3.amazonaws.com https://cdn.jsdelivr.net",
 
   'font-src':
     "'self' https://fonts.gstatic.com data: https://s3.amazonaws.com http://localhost:3000 http://www.giftgujarat.in https://www.giftgujarat.in https://giftgujarat.in https://shopestablishment.giftgujarat.in",
