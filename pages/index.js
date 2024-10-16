@@ -1,5 +1,12 @@
+import Head from "next/head";
+
 export default function Home() {
   return (
-    <h1>Hello World</h1>
+    <div>
+      <Head>
+        <title>Chat with Giftbot</title>
+      </Head>
+      <h1>Hello World from Next.js</h1>
+    </div>
   )
 }
