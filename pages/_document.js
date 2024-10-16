@@ -4,9 +4,6 @@ import createEmotionCache from "../utils/createEmotionCache";
 
 export default class MyDocument extends Document {
   render() {
-    const {
-      isUserPath,
-    } = this.props;
     return (
       <Html lang="en">
         <Head>
@@ -20,13 +17,13 @@ export default class MyDocument extends Document {
 
           {this.props.emotionStyleTags}
 
-          {!isUserPath && (
-              <script
-                id="smatbot-chatbot-script"
-                src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"
-              defer={true}
-              ></script>
-            )}
+
+          <script
+            id="smatbot-chatbot-script"
+            src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"
+            defer={true}
+          ></script>
+
         </Head>
         <body>
           {/* <!-- Google tag (gtag.js) by DevIT --> */}
@@ -56,16 +53,15 @@ export default class MyDocument extends Document {
               gtag('config', 'G-8V1HRF0MJN');
             `}
           </Script>*/}
-          {isUserPath &&
-            (
-              <script
-                id="smatbot-chatbot-load"
-                dangerouslySetInnerHTML={{
-                  __html: `var chatbot_id=11110;!function(){var t,e,a=document,s="smatbot-chatbot";a.getElementById(s)||(t=a.createElement("script"),t.id=s,t.type="text/javascript",t.src="https://smatbot.s3.amazonaws.com/files/smatbot_plugin.js.gz",e=a.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e))}()`,
-                }}
-                defer={true}
-                ></script>
-            )}
+
+          <script
+            id="smatbot-chatbot-load"
+            dangerouslySetInnerHTML={{
+              __html: `var chatbot_id=11110;!function(){var t,e,a=document,s="smatbot-chatbot";a.getElementById(s)||(t=a.createElement("script"),t.id=s,t.type="text/javascript",t.src="https://smatbot.s3.amazonaws.com/files/smatbot_plugin.js.gz",e=a.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e))}()`,
+            }}
+            defer={true}
+          ></script>
+
           <Main />
           <NextScript />
         </body>
@@ -103,6 +99,5 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     emotionStyleTags,
-    isUserPath,
   };
 };

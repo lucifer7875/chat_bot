@@ -4,15 +4,15 @@ const cspPolicy = {
   'script-src':
     "'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://smatbot.s3.amazonaws.com https://code.responsivevoice.org https://cdn.jsdelivr.net https://www.google.com https://www.gstatic.com https://www.googletagmanager.com",
   'style-src':
-    "'self' 'unsafe-inline' https://fonts.googleapis.com https://smatbot.s3.amazonaws.com https://cdn.jsdelivr.net",
+    "'self' 'unsafe-inline' https://fonts.googleapis.com https://smatbot.s3.amazonaws.com https://cdn.jsdelivr.net https://plugin.smatbot.com/smatbot.css.gz",
 
   'font-src':
-    "'self' https://fonts.gstatic.com data: https://s3.amazonaws.com http://localhost:3000 http://www.giftgujarat.in https://www.giftgujarat.in https://giftgujarat.in https://shopestablishment.giftgujarat.in",
-  // "img-src": "'self' 'data:' https://custpostimages.s3.ap-south-1.amazonaws.com https://s3.ap-south-1.amazonaws.com https://s3.ap-south-1.amazonaws.com https://gift-web-assets.s3.ap-south-1.amazonaws.com https://assets.giftgujarat.in http://giftgujarat.devitsandbox.com http://localhost:3332 https://www.giftgujarat.in https://giftgujarat.in https://shopestablishment.giftgujarat.in http://localhost:5001 https://api.giftgujarat.in blob:http://localhost:3332 http://localhost:3332",
+    "'self' https://fonts.gstatic.com data: https://s3.amazonaws.com http://localhost:3000 http://www.giftgujarat.in https://www.giftgujarat.in https://chat-bot-chi-six.vercel.app/ https://shopestablishment.giftgujarat.in",
+  // "img-src": "'self' 'data:' https://custpostimages.s3.ap-south-1.amazonaws.com https://s3.ap-south-1.amazonaws.com https://s3.ap-south-1.amazonaws.com https://gift-web-assets.s3.ap-south-1.amazonaws.com https://assets.giftgujarat.in http://giftgujarat.devitsandbox.com http://localhost:3000 https://www.giftgujarat.in https://chat-bot-chi-six.vercel.app/ https://shopestablishment.giftgujarat.in http://localhost:5001 https://api.giftgujarat.in blob:http://localhost:3000 http://localhost:3000",
   'object-src': "'none'",
   'frame-ancestors': "'none'",
   'media-src':
-    "'self' https://assets.giftgujarat.in http://giftgujarat.devitsandbox.com https://custpostimages.s3.ap-south-1.amazonaws.com https://gift-web-assets.s3.ap-south-1.amazonaws.com http://localhost:3332 https://www.giftgujarat.in https://giftgujarat.in https://shopestablishment.giftgujarat.in https://api.giftgujarat.in http://localhost:5001 https://admingiftgujarat.devitsandbox.com",
+    "'self' https://assets.giftgujarat.in http://giftgujarat.devitsandbox.com https://custpostimages.s3.ap-south-1.amazonaws.com https://gift-web-assets.s3.ap-south-1.amazonaws.com http://localhost:3000 https://www.giftgujarat.in https://chat-bot-chi-six.vercel.app/ https://shopestablishment.giftgujarat.in https://api.giftgujarat.in http://localhost:5001 https://admingiftgujarat.devitsandbox.com",
   'connect-src':
     "'self' https://admingiftgujarat.devitsandbox.com https://www.smatbot.com https://www.google-analytics.com http://localhost:5001 https://api.giftgujarat.in wss://www.smatbot.com https://www.google.com",
 };
@@ -81,7 +81,7 @@ const nextConfig = {
           {
             key: 'Expect-CT',
             value:
-              'max-age=86400, enforce, report-uri="https://giftgujarat.in"',
+              'max-age=86400, enforce, report-uri="https://chat-bot-chi-six.vercel.app/"',
           },
         ],
       },
