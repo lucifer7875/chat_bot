@@ -8,12 +8,6 @@ export default class MyDocument extends Document {
   render() {
     const {
       isUserPath,
-      isLoginPath,
-      isSignupPath,
-      isChangePwdPath,
-      isForgotPwdPath,
-      isResetPwdPath,
-      isVerifyPath,
     } = this.props;
     return (
       <Html lang="en">
@@ -28,13 +22,7 @@ export default class MyDocument extends Document {
 
           {this.props.emotionStyleTags}
 
-          {!isUserPath &&
-            !isLoginPath &&
-            !isSignupPath &&
-            !isChangePwdPath &&
-            !isForgotPwdPath &&
-            !isResetPwdPath &&
-            !isVerifyPath && (
+          {!isUserPath && (
               <script
                 id="smatbot-chatbot-script"
                 src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"
