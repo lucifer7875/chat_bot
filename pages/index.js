@@ -6,6 +6,7 @@ export default function Home() {
       <Head>
         <title>Chat with Giftbot</title>
       </Head>
+      
       <h1>Hello World from Next.js</h1>
     </div>
   )
